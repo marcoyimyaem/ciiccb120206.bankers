@@ -65,7 +65,7 @@ public class Users {
     }
     // team panda eof
 }
-// pata team : generate login
+// pata team : generate login to
 // pata team eof
 
 // team psvm
