@@ -159,35 +159,35 @@ class LoginManager {
             .orElse(null);
     }
 
-
-    public static void main(String[] args) {
+    //commenting this psvm testing the login
+    // public static void main(String[] args) {
  
-        // List<Users> usersList = new ArrayList<>();
-        // usersList.add(new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0));
-        // usersList.add(new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0));
-        // usersList.add(new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0));
+    //     // List<Users> usersList = new ArrayList<>();
+    //     // usersList.add(new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0));
+    //     // usersList.add(new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0));
+    //     // usersList.add(new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0));
         
-        List<Users> usersList = List.of(
-            new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0),
-            new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0),
-            new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)   
-        );
+    //     List<Users> usersList = List.of(
+    //         new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0),
+    //         new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0),
+    //         new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)   
+    //     );
 
-        for (Users users : usersList) {
-            System.out.println(users.getName());
-        }
+    //     for (Users users : usersList) {
+    //         System.out.println(users.getName());
+    //     }
 
 
-        String mobileNumber = "1234567890";
-        int pin = 1254;
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        Users user = login(usersList, mobileNumber, pin);
-        if (user != null) {
-            System.out.println("Login successful! User: " + user.getName());
-        } else {
-            System.out.println("Invalid credentials.");
-        }
-    }
+    //     String mobileNumber = "1234567890";
+    //     int pin = 1254;
+    //     System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    //     Users user = login(usersList, mobileNumber, pin);
+    //     if (user != null) {
+    //         System.out.println("Login successful! User: " + user.getName());
+    //     } else {
+    //         System.out.println("Invalid credentials.");
+    //     }
+    // }
 
 }
 
