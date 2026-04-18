@@ -115,9 +115,9 @@ class Login {
         new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)
     );
         
-        //Scanner myID = new Scanner(System.in);
-        //System.out.println("Enter ID: "); 
-        //int id = myID.nextInt();
+       // Scanner myID = new Scanner(System.in);
+       // System.out.println("Enter ID: "); 
+       // int id = myID.nextInt();
         
         Scanner myMobileNum = new Scanner(System.in);
         System.out.println("Enter Mobile Number: "); 
@@ -130,16 +130,16 @@ class Login {
         boolean isValid = Login.isValidUser(mobileNum, pin, new
         ArrayList<>(usersList));
         for(Users user : usersList) {
-            if (user.getMobileNumber() == mobileNum) {
-                System.out.println("ID: " + user.getId());
-                System.out.println("Mobile Number: " + user.getMobileNumber());
-                System.out.println("Name: " + user.getName());
-                System.out.println("Address: " + user.getAddress());
-                System.out.println("Balance: " + user.getBalance());
-            }
+            //if (user.getMobileNumber() == mobileNum && user.getPin() == pin) {}
             if (isValid) {
-            System.out.println("Login successful!");break;
-            } else {System.out.println("Invalid mobile number or PIN.");}
+            System.out.println("Login successful!");
+            System.out.println("ID: " + user.getId());
+            System.out.println("Mobile Number: " + user.getMobileNumber());
+            System.out.println("Name: " + user.getName());
+            System.out.println("Address: " + user.getAddress());
+            System.out.println("Balance: " + user.getBalance());
+            break;
+            } else {System.out.println("Invalid mobile number or PIN.");break;}
         
     }
     }
