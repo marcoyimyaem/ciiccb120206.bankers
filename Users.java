@@ -6,7 +6,7 @@ public class Users {
     String address;
     double balance;
 
-    //team panda: generate constructors and getters+setters
+    // team panda: generate constructors and getters+setters
     public Users(int id, String mobileNumber, int pin, String name, String address, double balance) {
         this.id = id;
         this.mobileNumber = mobileNumber;
@@ -63,10 +63,10 @@ public class Users {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-    //team panda  eof
+    // team panda eof
 }
-//pata team : generate login
-//pata team  eof
+// pata team : generate login
+// pata team eof
 
 // team psvm
 // team psvm eof
