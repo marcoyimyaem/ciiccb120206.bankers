@@ -115,9 +115,9 @@ class Login {
         new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)
     );
         
-        Scanner myID = new Scanner(System.in);
-        System.out.println("Enter ID: "); 
-        int id = myID.nextInt();
+        //Scanner myID = new Scanner(System.in);
+        //System.out.println("Enter ID: "); 
+        //int id = myID.nextInt();
         
         Scanner myMobileNum = new Scanner(System.in);
         System.out.println("Enter Mobile Number: "); 
@@ -127,18 +127,10 @@ class Login {
         System.out.println("Enter PIN: "); 
         int pin = myPin.nextInt();
 
-     /*    Scanner myName = new Scanner(System.in);
-        System.out.println("Enter Name: "); 
-        String name = myName.nextLine();
-
-        Scanner myAddress = new Scanner(System.in);
-        System.out.println("Enter Addres: "); 
-        String address = myAddress.nextLine();
-*/
         boolean isValid = Login.isValidUser(mobileNum, pin, new
         ArrayList<>(usersList));
         for(Users user : usersList) {
-            if (user.getId() == id) {
+            if (user.getMobileNumber() == mobileNum) {
                 System.out.println("ID: " + user.getId());
                 System.out.println("Mobile Number: " + user.getMobileNumber());
                 System.out.println("Name: " + user.getName());
