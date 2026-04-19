@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Users {
     int id;
@@ -82,66 +83,39 @@ class Login {
         return isValid;
     }
 
-
-
-// public static void main(String[] args) {
-// List<Users> usersList = List.of(
-// new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0),
-// new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0),
-// new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)
-
-// );
-// String mobileNumber = "1234567890";
-// int pin = 1254;
-
-// boolean isValid = Login.isValidUser(mobileNumber, pin, new
-// ArrayList<>(usersList));
-// if (isValid) {
-// System.out.println("Login successful!");
-// } else {
-// System.out.println("Invalid mobile number or PIN.");
-// }
-// }
-
 // pata team eof
 
 // team psvm
+/*added import java.util.function.Predicate; removed redundant scanner and revised if-else condition */
+public static void main(String[] args) {
+    List<Users> usersList = List.of(
+            new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0),
+            new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0),
+            new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0));
+    
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter Mobile Number: ");
+    String mobileNum = scanner.nextLine();
 
+    System.out.println("Enter PIN: ");
+    int pin = scanner.nextInt();
 
-    public static void main(String[] args) {
-        List<Users> usersList = List.of(
-        new Users(1, "1234567890", 1234, "John Doe", "123 Main St", 1000.0),
-        new Users(2, "0987654321", 5678, "Jane Smith", "456 Elm St", 2000.0),
-        new Users(3, "5555555555", 9012, "Alice Johnson", "789 Oak St", 1500.0)
-    );
-        
-       // Scanner myID = new Scanner(System.in);
-       // System.out.println("Enter ID: "); 
-       // int id = myID.nextInt();
-        
-        Scanner myMobileNum = new Scanner(System.in);
-        System.out.println("Enter Mobile Number: "); 
-        String mobileNum = myMobileNum.nextLine();
-        
-        Scanner myPin = new Scanner(System.in);
-        System.out.println("Enter PIN: "); 
-        int pin = myPin.nextInt();
+    Users loggedInUser = usersList.stream()
+        .filter(user -> user.getMobileNumber().equals(mobileNum) && user.getPin() == pin)
+        .findFirst()
+        .orElse(null);
 
-        boolean isValid = Login.isValidUser(mobileNum, pin, new
-        ArrayList<>(usersList));
-        for(Users user : usersList) {
-            //if (user.getMobileNumber() == mobileNum && user.getPin() == pin) {}
-            if (isValid) {
-            System.out.println("Login successful!");
-            System.out.println("ID: " + user.getId());
-            System.out.println("Mobile Number: " + user.getMobileNumber());
-            System.out.println("Name: " + user.getName());
-            System.out.println("Address: " + user.getAddress());
-            System.out.println("Balance: " + user.getBalance());
-            break;
-            } else {System.out.println("Invalid mobile number or PIN.");break;}
-        
-    }
+    if (loggedInUser != null) {
+        System.out.println("Login successful!");
+        System.out.println("-----------------");
+        System.out.println("ID: " + loggedInUser.getId());
+        System.out.println("Mobile Number: " + loggedInUser.getMobileNumber());
+        System.out.println("Name: " + loggedInUser.getName());
+        System.out.println("Address: " + loggedInUser.getAddress());
+        System.out.println("Balance: " + loggedInUser.getBalance());
+        System.out.println("-----------------");
+    } else {
+        System.out.println("Invalid mobile number or PIN.");
     }
 }
 // team psvm eof
@@ -158,7 +132,9 @@ class LoginManager {
             .findFirst()
             .orElse(null);
     }
+}
 
+}
     //commenting this psvm testing the login
     // public static void main(String[] args) {
  
@@ -189,6 +165,6 @@ class LoginManager {
     //     }
     // }
 
-}
+
 
 // pata team eof
